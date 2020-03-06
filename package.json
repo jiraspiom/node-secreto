@@ -1,0 +1,24 @@
+{
+  "name": "node-secreto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app",
+    "debug": "nodemon --inspect app.js",
+    "dev": "nodemon ./app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "materialize-css": "^1.0.0-rc.2",
+    "mongoose": "^5.9.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
