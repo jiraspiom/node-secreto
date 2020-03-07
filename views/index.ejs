@@ -7,11 +7,9 @@
             <div class="card-content white-text">
                 <span class="card-title"></span>
                 <label for="segredo"></label>
-                <textarea id="segredo" name="segredo" class="materialize-textarea white-text"
-                    placeholder="Diga o que você está pensando..." maxlength="264" 
-                    required oninvalid="this.setCustomValidity('<%= mensagem %>')" 
-                    onchange="try{setCustomValidity('')}catch(e){}" >
-                </textarea>
+                <textarea name="segredo" id="segredo" 
+                placeholder="Diga o que você está pensando..." class="materialize-textarea white-text" maxlength="264" required
+                oninvalid="this.setCustomValidity('<%= mensagem %>')" onchange="try{setCustomValidity('')}catch(e){}" ></textarea>
                 <button class="btn waves-effect waves-light pulse" style="float: right;">Falar</button>
             </div>
         </div>
@@ -41,6 +39,8 @@
         <div class="col s12 m3"></div>
     </div>
 <% }) %>
+<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+      
 
 <script data-ad-client="ca-pub-6852459130031674" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
