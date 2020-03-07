@@ -8,14 +8,16 @@
                 <span class="card-title"></span>
                 <label for="segredo"></label>
                 <textarea id="segredo" name="segredo" class="materialize-textarea white-text"
-                    placeholder="Diga o que você está pensando..." maxlength="264" required></textarea>
+                    placeholder="Diga o que você está pensando..." maxlength="264" 
+                    required oninvalid="this.setCustomValidity('<%= mensagem %>')" 
+                    onchange="try{setCustomValidity('')}catch(e){}" >
+                </textarea>
                 <button class="btn waves-effect waves-light pulse" style="float: right;">Falar</button>
             </div>
         </div>
     </form>
     <div class="col s12 m3"></div>
 </div>
-
 
 <% segredos.forEach(segredo => { %>
     <div class="row">
