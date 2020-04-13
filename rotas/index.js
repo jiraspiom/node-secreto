@@ -7,7 +7,7 @@ const Segredo = mongoose.model("segredo")
 rotas.get("/", (req, res) => {
     // updateCor()
     Segredo.find().limit(88).sort({ "dataAt": 'desc' }).then((segredos) => {
-        res.render("index", { segredos: segredos, mensagem: mensagem()})
+        res.render("index", { segredos: segredos, mensagem: mensagem() })
     }).catch((erro) => {
         res.send("erro ao buscar registro" + erro)
     })
@@ -15,8 +15,14 @@ rotas.get("/", (req, res) => {
 rotas.post("/", (req, res) => {
     //if (req.body.segredo || typeof req.body.segredo != undefined || req.body.segredo != null){
     if (req.body.segredo != undefined) {
+
+        var segredo = req.body.segredo.trimLeft()
+
+        //corto a string para mao utrapassar o valor
+        segredo = segredo.substr(0, 264)
+
         const novo = {
-            segredo: req.body.segredo.trimLeft(),
+            segredo: segredo,
             cor: cor(),
             dataAt: Date.now()
         }

@@ -1,5 +1,12 @@
 <%- include ("./partials/header.ejs") %>
 
+
+<div class="fixed-action-btn click-to-toggle" > 
+    <a href="/" class="btn-floating btn-large green-blue"><i class="material-icons">add</i></a>
+
+    </a>
+</div>
+
 <div class="row">
     <div class="col s12 m3"></div>
     <form class="col s12 m6" action="/" method="POST">
@@ -10,7 +17,7 @@
                 <textarea name="segredo" id="segredo" 
                 placeholder="Diga o que você está pensando..." class="materialize-textarea white-text" maxlength="264" required
                 oninvalid="this.setCustomValidity('<%= mensagem %>')" onchange="try{setCustomValidity('')}catch(e){}" ></textarea>
-                <button class="btn waves-effect waves-light pulse" style="float: right;">Falar</button>
+                <button class="btn waves-effect waves-light pulse" style="float: right;">Tellme</button>
             </div>
         </div>
     </form>
@@ -39,5 +46,6 @@
         <div class="col s12 m3"></div>
     </div>
 <% }) %>
-    
+
+
 <%- include ("./partials/footer.ejs") %>

@@ -26,10 +26,12 @@ mongoose.connect("mongodb+srv://secret:5aZDkdleESSyO542@cluster0-zi8ww.gcp.mongo
 
 
 app.get("/about", (req, res)=>{
-    res.send("pode dizer qualquer coisa pois e gravado anomimamente, e não tem historico.")
+    //res.send("pode dizer qualquer coisa pois e gravado anomimamente, e não tem historico.")
+    res.render("about")
 })
 
 app.use("/", rotas)
+
 const PORTA = process.env.PORT || 3001
 app.listen(PORTA, ()=>{
     console.log("app rodando")

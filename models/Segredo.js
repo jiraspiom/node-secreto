@@ -6,7 +6,6 @@ var segredoSchema = new mongoose.Schema({
     segredo: {
         type: String,
         required: true
-
     },
     cor: {
         type: String,
