@@ -25,14 +25,12 @@ rotas.get("/segredo", (req, res) => {
 })
 
 rotas.post("/segredo", (req, res) => {
-    console.log('passou no post')
-    console.log(req.body)
+
     if (req.body.segredo != undefined) {
-        console.log(segredo)
       var segredo = req.body.segredo.trimLeft()
 
       segredo = segredo.substr(0, 264)
-      url = req.body.urlImage
+      url = req.body.urlImage ? req.body.urlImage : "www"
     
       const novo = {
         segredo: segredo,
@@ -40,6 +38,7 @@ rotas.post("/segredo", (req, res) => {
         dataAt: Date.now(),
         urlImage: url
       }
+     console.log(novo)
   
       new Segredo(novo).save().then(
         res.json({ok: true})

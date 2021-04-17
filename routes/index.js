@@ -38,7 +38,8 @@ rotas.post("/", (req, res) => {
     const novo = {
       segredo: segredo,
       cor: colorir.cor(),
-      dataAt: Date.now()
+      dataAt: Date.now(),
+      urlImage: 'www'
     }
 
     new Segredo(novo).save().then(
