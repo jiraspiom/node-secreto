@@ -4,20 +4,19 @@ const mongoose = require("mongoose")
 require("../models/Segredo")
 const Segredo = mongoose.model("segredo")
 
-// funcoes auxiliares
 const util = require('../utils/mensagem')
 const colorir = require('../utils/cor')
 
 //? usado para atualizar as cores
 // const update = require('../utils/updateCor')
 
-rotas.get("/", (req, res) => {
-  //? usado para atualizar as cores tem de descomentar
+rotas.get("/atualizar", (req, res) => {
   // update.updateCor()
-    res.render("atualizando...")
-
+  res.send("atualizando ...")
 })
+
 rotas.get("/", (req, res) => {
+  // updateCor()
   Segredo.find().limit(88).sort({ "dataAt": 'desc' }).then((segredos) => {
     res.render("index", { segredos: segredos, mensagem: util.mensagem() })
   }).catch((erro) => {
