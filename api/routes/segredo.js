@@ -23,13 +23,15 @@ rotas.get("/segredo", (req, res) => {
     })
 })
 
-rotas.post("/", (req, res) => {
+rotas.post("/segredo", (req, res) => {
+
+    console.log(req.body)
     if (req.body.segredo != undefined) {
-  
+        console.log(segredo)
       var segredo = req.body.segredo.trimLeft()
 
       segredo = segredo.substr(0, 264)
-  
+    
       const novo = {
         segredo: segredo,
         cor: colorir.cor(),
@@ -37,12 +39,13 @@ rotas.post("/", (req, res) => {
       }
   
       new Segredo(novo).save().then(
-        res.redirect("/")
+        res.json({ok: true})
       ).catch((erro) => {
-        res.redirect("/")
+        res.statusCode(200)
+        res.json({ok: false})
       })
     } else {
-      res.redirect("/")
+      res.json({ok: false})
     }
   })
 

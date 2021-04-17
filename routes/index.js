@@ -29,6 +29,7 @@ rotas.post("/", (req, res) => {
   //if (req.body.segredo || typeof req.body.segredo != undefined || req.body.segredo != null){
   if (req.body.segredo != undefined) {
 
+    console.log(req.body)
     var segredo = req.body.segredo.trimLeft()
 
     //corto a string para mao utrapassar o valor
