@@ -20,7 +20,7 @@ const mongoose = require('mongoose')
 //mongoose
 mongoose.Promise = global.Promise;
 //const connection = new mongoose.connect("mongodb://localhost:27017/Segredo", { useNewUrlParser: true }).then(() => {
-mongoose.connect(process.env.MONGO_SERVER_TESTE, { useNewUrlParser: true }).then(() => {
+mongoose.connect(process.env.MONGO_SERVER, { useNewUrlParser: true }).then(() => {
     console.log("Conectado ao MongoDB :D")
 }).catch((erro) => {
     console.log("Erro ao conectar MongoDB - DESCRICAO DO ERRO: " + erro)
