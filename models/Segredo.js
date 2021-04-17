@@ -15,6 +15,10 @@ var segredoSchema = new mongoose.Schema({
         type: Date,
         required: true,
         default: Date.now()
+    },
+    urlImage: {
+        type: String,
+        required: true
     }
 });
 

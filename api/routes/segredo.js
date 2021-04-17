@@ -32,17 +32,18 @@ rotas.post("/segredo", (req, res) => {
       var segredo = req.body.segredo.trimLeft()
 
       segredo = segredo.substr(0, 264)
+      url = req.body.urlImage
     
       const novo = {
         segredo: segredo,
         cor: colorir.cor(),
-        dataAt: Date.now()
+        dataAt: Date.now(),
+        urlImage: url
       }
   
       new Segredo(novo).save().then(
         res.json({ok: true})
       ).catch((erro) => {
-        res.statusCode(200)
         res.json({ok: false})
       })
     } else {
