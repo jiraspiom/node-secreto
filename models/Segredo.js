@@ -19,6 +19,10 @@ var segredoSchema = new mongoose.Schema({
     urlImage: {
         type: String,
         required: true
+    },
+    coracao: {
+        type: Number,
+        required: false
     }
 });
 

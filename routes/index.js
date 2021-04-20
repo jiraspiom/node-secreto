@@ -24,7 +24,6 @@ rotas.get("/", (req, res) => {
   })
 })
 
-
 rotas.post("/", (req, res) => {
   //if (req.body.segredo || typeof req.body.segredo != undefined || req.body.segredo != null){
   if (req.body.segredo != undefined) {
