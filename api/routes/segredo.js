@@ -61,18 +61,20 @@ rotas.put('/segredo/:id', (req, res) => {
     Segredo.updateOne({ _id: seg._id }, { coracao: total }, (err) => {
       if (err) {
         console.log(`Error: ` + err)
+        return res.json({erro: "erro ao atualizar coracao"})
+      }else{
+        console.log
+        return res.json({id: _id, coracao: seg.coracao + 1})
       }
     });
   }).catch((erro)=>{
     console.log('ERRO O BUSCAR, OU NAO EXISTE O REGISTRO', erro)
+    return res.json({erro: "erro ao buscar"})
   });
-
-  res.json({id: _id })
-
 })
 
 //! funcionando
-rotas.put('/segredo/:id', (req, res) => {
+rotas.put('/segredoseraatualizadoagumdianaoseiquandovaiconctericco/:id', (req, res) => {
   const _id = req.params.id;
 
   if (!_id) return res.json('segredo nao encontrado...')
