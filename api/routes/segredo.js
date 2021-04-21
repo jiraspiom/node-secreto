@@ -63,8 +63,8 @@ rotas.put('/segredo/:id', (req, res) => {
         console.log(`Error: ` + err)
         return res.json({erro: "erro ao atualizar coracao"})
       }else{
-        console.log
-        return res.json({id: _id, coracao: seg.coracao + 1})
+        console.log(seg.coracao)
+        return res.json({id: _id, coracao: seg.coracao})
       }
     });
   }).catch((erro)=>{
