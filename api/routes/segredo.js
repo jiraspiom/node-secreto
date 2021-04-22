@@ -34,7 +34,7 @@ rotas.post("/segredo", (req, res) => {
 
     const novo = {
       segredo: segredo,
-      cor: req.body.cor ? req.body.cor  : colorir.cor(),
+      cor: req.body.cor ? req.body.cor : colorir.cor(),
       dataAt: Date.now(),
       urlImage: url
     }
